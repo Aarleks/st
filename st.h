@@ -133,4 +133,3 @@ extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
 extern float alpha;
-extern MouseKey mkeys[];
