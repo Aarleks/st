@@ -474,14 +474,6 @@ bpress(XEvent *e)
 		}
 	}
 
-	for (mk = mkeys; mk < mkeys + LEN(mkeys); mk++) {
-		if (e->xbutton.button == mk->b
-				&& match(mk->mask, e->xbutton.state)) {
-			mk->func(&mk->arg);
-			return;
-		}
-	}
-
 	if (e->xbutton.button == Button1) {
 		/*
 		 * If the user clicks below predefined timeouts specific
