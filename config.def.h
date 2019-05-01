@@ -169,7 +169,7 @@ MouseKey mkeys[] = {
 };
 
 static char *openurlcmd[] = { "/bin/sh", "-c",
-    "sed 's/.*│//g' | tr -d '\n' | grep -aEo '((http|https)://|www\\.)[a-zA-Z0-9./?=_-]*' | uniq | sed 's/^www./http:\\/\\/www\\./g' | dmenu -l 10 | xargs -r xdg-open",
+    "xurls | dmenu -l 10 | xargs -r xdg-open",
     "externalpipe", NULL };
 
 /* Internal keyboard shortcuts. */
@@ -191,10 +191,6 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ Mod1Mask,		XK_l,		externalpipe,	{ .v = openurlcmd }},
-	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
-	{ MODKEY,		XK_k,		kscrollup,      {.i =  1} },
-	{ MODKEY|ShiftMask,	XK_I,		zoom,           {.f = +1} },
-	{ MODKEY|ShiftMask,	XK_O,		zoom,           {.f = -1} },
 };
 
 /*
